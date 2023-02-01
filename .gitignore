@@ -1,0 +1,10 @@
+# .env
+.env
+
+# logging file
+Insurance_log
+
+#Insurance.egg-info
+Insurance_log
+
+
