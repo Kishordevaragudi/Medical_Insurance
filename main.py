@@ -1,25 +1,19 @@
-import pymongo
+from Insurance.logger import log
+from Insurance.exception import InsuranceException
+import os,sys
 
-# Provide the mongodb localhost url to connect python to mongodb.
-client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
+def test_logger_and_expection():
+    try:
+        log.info("Starting the test_logger_and_expection")
+        result=3/0
+        print(result)
+        log.info("Ending point of test_logger_and_expection")
+    except Exception as e:
+        log.debug(str(e))
+        raise InsuranceException(e, sys)
 
-# Database Name
-dataBase = client["neurolabDB"]
-
-# Collection  Name
-collection = dataBase['Products']
-
-# Sample data
-d = {'companyName': 'iNeuron',
-     'product': 'Affordable AI',
-     'courseOffered': 'Machine Learning with Deployment'}
-
-# Insert above records in the collection
-rec = collection.insert_one(d)
-
-# Lets Verify all the record at once present in the record with all the fields
-all_record = collection.find()
-
-# Printing all records present in the collection
-for idx, record in enumerate(all_record):
-     print(f"{idx}: {record}")
+if __name__ == "__main__":
+    try:
+        test_logger_and_expection()
+    except Exception as e:
+        print(e)

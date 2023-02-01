@@ -1,25 +1,27 @@
-from setuptools import find_packages, setup
+from setuptools import find_packages,setup
+
 from typing import List
 
-requriment_file_name = "requirements.txt"
-REMOVE_PACKAGE = "-e ."
+REQUIREMENT_FILE_NAME="requirements.txt"
+HYPHEN_E_DOT = "-e ."
 
 def get_requirements()->List[str]:
-    with open(requriment_file_name) as requirement_file:
-        requriment_list = requirement_file.readline()
-    requriment_list = [requriment_name.replace("\n", "") for requriment_name in requriment_list]
+    
+    with open(REQUIREMENT_FILE_NAME) as requirement_file:
+        requirement_list = requirement_file.readlines()
+    requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+    
+    if HYPHEN_E_DOT in requirement_list:
+        requirement_list.remove(HYPHEN_E_DOT)
+    return requirement_list
 
-    if REMOVE_PACKAGE in requriment_list:
-        requriment_list.remove(REMOVE_PACKAGE)
-    return requriment_list
 
 
-
-setup(name='Insurance',
-      version='0.0.1',
-      description='Insurance Industry lavel project',
-      author='kishor Devaragudi',
-      author_email='kishodev36@gmail.com',
-      packages=find_packages(),
-      install_reqires = get_requirements()
-     )
+setup(
+    name="Insurance",
+    version="0.0.2",
+    author="kishor Devaragudi",
+    author_email="kishordev36@gmail.com",
+    packages = find_packages(),
+    install_requires=get_requirements(),
+)
