@@ -50,7 +50,7 @@ class DataTransformation:
             raise InsuranceException(e, sys)
     
 
-    def initaite_data_transformation(self)->artifact_entity.DataTransformationArtifact:
+    def initiate_data_transformation(self)->artifact_entity.DataTransformationArtifact:
         try:
             log.info(f"Reading base dataframe")
             train_df = pd.read_csv(self.data_ingestion_artifact.train_file_path)
