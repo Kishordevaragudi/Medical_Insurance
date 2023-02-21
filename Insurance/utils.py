@@ -71,7 +71,7 @@ def load_object(file_path: str, ) -> object:
         with open(file_path, "rb") as file_obj:
             return dill.load(file_obj)
     except Exception as e:
-        raise InsuranceException(e, sys) from e
+        raise SensorException(e, sys) from e
 
 def save_numpy_array_data(file_path: str, array: np.array):
     """
