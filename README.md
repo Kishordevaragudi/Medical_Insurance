@@ -22,4 +22,11 @@ Applying machine learing tasks like Data Exploration, Data Cleaning, Feature Eng
 ##### Pickle File : Selected model as per best RMSE score & R-squared and created pickle file using pickle library.
 ##### Webpage &Deployment : Created a web application that takes all the necessary inputs from the user & shows the output. Then deployed project on the Heroku Platform.
 
-## How to run the poject
+### How to run the poject
+1. git clone https://github.com/Kishordevaragudi/Medical_Insurance.git
+2. conda create -p venv python==3.7 -y
+3. pip install -r requirements.txt
+4. streamlit run app.py
+
+### Output 
+
