@@ -29,4 +29,4 @@ Applying machine learing tasks like Data Exploration, Data Cleaning, Feature Eng
 4. streamlit run app.py
 
 ### Output 
-
+![Screenshot 2023-08-31 143012](https://github.com/Kishordevaragudi/Medical_Insurance/assets/105155723/ec51f44e-8d2f-4725-9b39-6fa0794b69a5)
